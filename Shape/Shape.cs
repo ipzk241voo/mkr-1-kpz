@@ -8,8 +8,13 @@ namespace ConsoleApp.Task3.Shape
         public Shape(IRenderer Renderer)
         {
             this.Renderer = Renderer;
+            OnCreated();
         }
 
+
+        protected virtual void OnCreated();
+        public virtual void OnInserted() => WriteLine($"{GetType().Name} inserted into document");
+        public virtual void OnRemoved() => WriteLine($"{GetType().Name} removed from document");
         public abstract void Draw();
     }
 }
