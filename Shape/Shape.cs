@@ -12,7 +12,7 @@ namespace ConsoleApp.Task3.Shape
         }
 
 
-        protected virtual void OnCreated();
+        protected virtual void OnCreated() => WriteLine($"{GetType().Name} created");
         public virtual void OnInserted() => WriteLine($"{GetType().Name} inserted into document");
         public virtual void OnRemoved() => WriteLine($"{GetType().Name} removed from document");
         public abstract void Draw();
